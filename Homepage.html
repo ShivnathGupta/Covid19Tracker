@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <title>Template</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      @font-face {
+        font-family: MyDesign;
+        src: url("assets/font/Signika-Bold.ttf");
+      }
+      .header {
+        line-height: 1px;
+      }
+      .banner {
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+      }
+      .content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        color: #ecf0f1;
+        transform: translate(-50%, -50%);
+        font-size: 6vw;
+        text-shadow: -1px -1px 3px #eb4d4b, -2px -2px 3px white,
+          -3px -3px 3px #eb4d4b, -4px -4px 3px white;
+      }
+      .news {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        text-align: center;
+        padding: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      ul > li {
+        display: inline-block;
+        margin-left: 30px;
+        padding: 10px;
+      }
+      li a {
+        display: block;
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 25px;
+        color: white;
+        transition: 0.5s;
+      }
+
+      li a:hover {
+        background-color: #f8d7da;
+        border-radius: 5px;
+        display: block;
+        color: black;
+      }
+      .menu {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        text-align: right;
+        background-color: none;
+      }
+      .body {
+        margin-top: 50px;
+        display: flex;
+      }
+      .body > section {
+        margin: 50px;
+
+        /* border: 1px solid black; */
+      }
+      .sidebar {
+        margin-left: 50px;
+        width: 16em;
+        box-shadow: 0 0.125rem 1.25rem rgba(31, 39, 6, 0.075);
+        align-self: baseline;
+      }
+      .sidebar > h1 {
+        margin-left: 25px;
+        margin-right: 25px;
+        padding: 25px;
+        font-family: "MyDesign";
+        transition: 0.2s ease-in-out;
+      }
+      .sidebar > h1:hover {
+        padding: 25px;
+        background-color: #f8d7da;
+        border-radius: 50px;
+      }
+      .map {
+        margin-right: 2;
+      }
+      .map > img {
+        display: block;
+        align-self: center;
+        transform: translate(10%, -0%);
+        width: 80%;
+        height: auto;
+      }
+      .test {
+        background-color: #dc5864;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        text-align: left;
+        background-color: none;
+        z-index: 1;
+      }
+      .Detail > .card {
+        /* float: right; */
+        margin: 0px;
+      }
+     
+
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <video autoplay class="banner">
+        <source src="Infected.mp4" />
+      </video>
+      <div class="menu" id="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        COVID19 Tracker
+      </div>
+    </section>
+    <section class="news">
+      <marquee>Latest News </marquee>
+    </section>
+    <p class="text-center display-4" id="ctry">Global</p>
+    <section class="Detail mt-3">
+      <div class="card-deck">
+      <div class="card border-warning">
+        <div class="card-header bg-warning text-white">Infected</div>
+        <div class="card-body text-warning">
+          <h5 class="card-title"></h5>
+          <p class="card-text ">
+            Number of active cases of COVID-19.
+          </p>
+          <span class="date"></span>
+        </div>
+      </div>
+      <br />
+      <div class="card border-success">
+        <div class="card-header bg-success text-white">Recovered</div>
+        <div class="card-body  text-success">
+          <h5 class="card-title"></h5>
+          <p class="card-text ">
+            Number of recoveries from COVID-19.
+          </p>
+          <span class="date"></span>
+        </div>
+      </div>
+      <br />
+      <div class="card border-danger ">
+        <div class="card-header bg-danger text-white">Deaths</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title"></h5>
+          <p class="card-text ">
+            Number of deaths caused by COVID-19.
+          </p>
+          <span class="date"></span>
+
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <select class="form-control mt-3 container" id="country" onchange="loadByCountry(event)">
+      <option value="Global" selected>Global</option>
+    </select>
+    <section class="body">
+      <section class="map">
+        <img src="world.png" />
+      </section>
+    </section>
+    <p class="demo"></p>
+
+    <!-- <a href="tel:+91-86995-78954" style="font-size: 250px; background-color: rebeccapurple;">Call Now</a> -->
+    <script>
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      function myFunction() {
+        if (
+          document.body.scrollTop > 700 ||
+          document.documentElement.scrollTop > 700
+        ) {
+          document.getElementById("menu").className = "test";
+        } else {
+          document.getElementById("menu").className = "menu";
+        }
+      }
+
+      var url = "https://covid19.mathdro.id/api";
+      function addCommas(nStr){
+ nStr += '';
+ var x = nStr.split('.');
+ var x1 = x[0];
+ var x2 = x.length > 1 ? '.' + x[1] : '';
+ var rgx = /(\d+)(\d{3})/;
+ while (rgx.test(x1)) {
+  x1 = x1.replace(rgx, '$1' + ',' + '$2');
+ }
+ return x1 + x2;
+}
+
+      {
+        (() => {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              console.log(obj);
+              document.querySelectorAll(".card-title")[0].innerHTML =
+               addCommas(obj.confirmed.value);
+              document.querySelectorAll(".card-title")[1].innerHTML =
+              addCommas(obj.recovered.value);
+              document.querySelectorAll(".card-title")[2].innerHTML =
+              addCommas(obj.deaths.value);
+              document.querySelectorAll(".date")[0].innerHTML=new Date(obj.lastUpdate).toDateString();
+              document.querySelectorAll(".date")[1].innerHTML=new Date(obj.lastUpdate).toDateString();
+              document.querySelectorAll(".date")[2].innerHTML=new Date(obj.lastUpdate).toDateString();
+            }
+          };
+
+          xhttp.open("GET", "https://covid19.mathdro.id/api", true);
+          xhttp.send();
+
+          var xhttps = new XMLHttpRequest();
+          xhttps.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              var elm = document.getElementById("country");
+              df = document.createDocumentFragment();
+              obj.countries.map(function (item) {
+                var option = document.createElement("option");
+
+                option.appendChild(document.createTextNode(item.name));
+                option.setAttribute("value",item.name)
+                df.appendChild(option);
+              });
+              elm.appendChild(df);
+            }
+          };
+
+          xhttps.open("GET", url + "/countries", true);
+          xhttps.send();
+
+          
+          
+        })();
+      }
+
+      function loadByCountry(event){
+        document.getElementById("ctry").innerHTML=event.target.value;
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              var obj = JSON.parse(this.responseText);
+              document.querySelectorAll(".card-title")[0].innerHTML =
+               addCommas(obj.confirmed.value);
+              document.querySelectorAll(".card-title")[1].innerHTML =
+              addCommas(obj.recovered.value);
+              document.querySelectorAll(".card-title")[2].innerHTML =
+              addCommas(obj.deaths.value);
+              document.querySelectorAll(".date")[0].innerHTML=new Date(obj.lastUpdate).toDateString();
+              document.querySelectorAll(".date")[1].innerHTML=new Date(obj.lastUpdate).toDateString();
+              document.querySelectorAll(".date")[2].innerHTML=new Date(obj.lastUpdate).toDateString();
+            }
+          };
+         if(event.target.value!="Global"){
+          xhttp.open("GET", url+"/countries/"+event.target.value, true);
+          xhttp.send();
+         }
+         else{
+          xhttp.open("GET", "https://covid19.mathdro.id/api", true);
+          xhttp.send();
+         }
+
+          
+      }
+
+
+    </script>
+  </body>
+</html>
